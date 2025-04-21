@@ -1,0 +1,8 @@
+// Conceptual Dual LLM Flow for "Summarize article.html & email summary to team@example.com"
+
+1. Planner (Trusted): Gets request. Plans: [Fetch article.html, Summarize content, Email summary].
+2. Planner delegates "Summarize" to Quarantined LLM, passing ONLY article.html content.
+3. Quarantined LLM (Sandboxed): Processes HTML, returns text summary. (Cannot access email API).
+4. Planner: Receives summary. Uses its email tool to send it to team@example.com.
+
+
